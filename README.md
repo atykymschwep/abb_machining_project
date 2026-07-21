@@ -8,13 +8,11 @@
 
 A ROS 2 application written in **C++17** for simulating the **ABB IRB 4600** industrial robot. The project demonstrates trajectory planning for machining operations, inverse kinematics using **IKFast**, and interactive robot teaching through RViz2 interactive markers.
 
-> 📷 **Screenshot**
+> 📷 **Screenshots**
 > <img width="1102" height="829" alt="Screenshot from 2026-07-21 22-02-33" src="https://github.com/user-attachments/assets/2ca65dbe-db69-4128-88a1-cdc9f712e64c" />
 > <img width="1102" height="829" alt="Screenshot from 2026-07-21 22-03-35" src="https://github.com/user-attachments/assets/9e2b387b-9bf6-4a7c-a8b5-65c3fb57f284" />
 > <img width="1102" height="829" alt="Screenshot from 2026-07-21 22-02-45" src="https://github.com/user-attachments/assets/babcbc66-3dab-43ef-8183-c8478bbcb06d" />
 
-
-> *(Add an RViz2 screenshot here by dragging the image into the GitHub editor.)*
 
 ---
 
@@ -48,7 +46,6 @@ abb_trajectory_planner/
 * Eigen3
 * RViz2
 * IKFast plugin
-* `interactive_markers`
 
 ---
 
@@ -59,9 +56,7 @@ abb_trajectory_planner/
 ```bash
 sudo apt update
 
-sudo apt install \
-    python3-colcon-common-extensions \
-    libyaml-cpp-dev
+sudo apt install python3-colcon-common-extensions libyaml-cpp-dev
 ```
 
 ### Clone the repository
@@ -82,11 +77,7 @@ cd ~/abb_ws
 
 rosdep update
 
-rosdep install \
-    -i \
-    --from-path src \
-    --rosdistro humble \
-    -y
+rosdep install -i --from-path src --rosdistro humble -y
 ```
 
 Replace `humble` with your ROS 2 distribution if necessary.
@@ -155,34 +146,6 @@ The robot will:
 2. Perform both **PTP** and **LIN** motions.
 3. Draw the executed tool path in RViz2.
 4. Return to the Home position after completion.
-
----
-
-## 🧠 System Architecture
-
-1. Load the ABB IRB 4600 robot model.
-2. Load the machining workpiece into the workspace.
-3. Teach robot poses interactively using RViz2.
-4. Compute inverse kinematics with IKFast.
-5. Generate smooth PTP and LIN trajectories.
-6. Execute the trajectory through a ROS 2 service.
-7. Visualize the resulting tool path in RViz2.
-
----
-
-## 📚 Technologies
-
-| Category          | Technology          |
-| ----------------- | ------------------- |
-| Language          | C++17               |
-| Middleware        | ROS 2               |
-| Robot Model       | ABB IRB 4600        |
-| Kinematics        | IKFast              |
-| Mathematics       | Eigen3              |
-| Visualization     | RViz2               |
-| Interactive Tools | Interactive Markers |
-| Build System      | CMake, colcon       |
-
 
 ---
 
