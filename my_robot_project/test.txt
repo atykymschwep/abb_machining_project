@@ -1,0 +1,33 @@
+## variant 1
+Tvia = {0.946635, 0.855007, 0.037387, -0.725588, 2.049268, -0.409302};
+
+    movePTP(Home, T1_app, 2.0, 0.0, 0.0, 1.0); 
+    moveLIN(T1_app, T1, 1.0, 1.0, 0.0, 0.0);    
+    moveLIN(T1, T2, 4.0, 0.0, 1.0, 0.0);        
+    moveLIN(T2, T2_app, 1.0, 1.0, 0.0, 0.0);    
+
+    movePTP(T2_app, T4_app, 2.0, 0.0, 0.0, 1.0);   
+
+    moveLIN(T4_app, T4, 1.0, 1.0, 0.0, 0.0);    
+    moveLIN(T4, T3, 4.0, 0.0, 1.0, 0.0);        
+    moveLIN(T3, T3_app, 1.0, 1.0, 0.0, 0.0);    
+
+    movePTP(T3_app, Tvia, 2.0, 0.0, 0.0, 1.0);
+    movePTP(Tvia, Home, 2.0, 0.0, 0.0, 1.0);   
+
+## variant 2
+Tvia = {0.734916, 1.170104, -0.394137, -0.918181, 2.126425, -0.539421};
+
+    movePTP(Home, T1_app, 2.0, 0.0, 0.0, 1.0); 
+    moveLIN(T1_app, T1, 1.0, 1.0, 0.0, 0.0);    
+    moveLIN(T1, T2, 4.0, 0.0, 1.0, 0.0);        
+    moveLIN(T2, T2_app, 1.0, 1.0, 0.0, 0.0);
+    movePTP(T2_app, Tvia, 2.0, 0.0, 0.0, 1.0);    
+
+    movePTP(Tvia, T4_app, 2.0, 0.0, 0.0, 1.0);   
+
+    moveLIN(T4_app, T4, 1.0, 1.0, 0.0, 0.0);    
+    moveLIN(T4, T3, 4.0, 0.0, 1.0, 0.0);        
+    moveLIN(T3, T3_app, 1.0, 1.0, 0.0, 0.0);    
+
+    movePTP(T3_app, Home, 2.0, 0.0, 0.0, 1.0);   
